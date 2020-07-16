@@ -1,0 +1,32 @@
+:root {
+  @media screen and (max-width: 480px) {
+    --font-size: 45%;
+  }
+
+  @media screen and (min-width: 481px) and (max-width: 720px) {
+    --font-size: 52%;
+  }
+  @media screen and (min-width: 721px) {
+    --font-size: 62.5%;
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+* {
+  font-size: 1.6rem;
+}
