@@ -30,6 +30,12 @@ jobs:
 
       - name: Deploy
         run: |
+          echo -e "\\033[1;36mgit config user.name ahenteti\\033[0;02m"
+          git config user.name ahenteti
+
+          echo -e "\\033[1;36mgit config user.email ahmad.henteti@gmail.com\\033[0;02m"
+          git config user.email ahmad.henteti@gmail.com
+
           echo -e "\\033[1;36mgit commit -am commit before checkout\\033[0;02m"
           git commit -am "commit before checkout"
 
@@ -65,12 +71,6 @@ jobs:
 
           echo -e "\\033[1;36msed -i 's:href="styles:href="ahenteti-todos/styles:g' index.html\\033[0;02m"
           sed -i 's:href="styles:href="ahenteti-todos/styles:g' index.html
-
-          echo -e "\\033[1;36mgit config user.name ahenteti\\033[0;02m"
-          git config user.name ahenteti
-
-          echo -e "\\033[1;36mgit config user.email ahmad.henteti@gmail.com\\033[0;02m"
-          git config user.email ahmad.henteti@gmail.com
 
           echo -e "\\033[1;36mgit remote set-url origin https://*****@github.com/ahenteti-todos\\033[0;02m"
           git remote set-url origin https://x-access-token:${{ secrets.DEPLOY_TO_GH_PAGES }}@github.com/ahenteti/ahenteti-todos.git
