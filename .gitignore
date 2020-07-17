@@ -1,12 +1,2 @@
-# Ignore everything
-*
-
-# But not these files...
-!.gitignore
-!favicon.png
-!index.html
-!main*
-!polyfills*
-!runtime*
-!styles*
-!vendor*
+dist
+node_modules
