@@ -42,26 +42,8 @@ jobs:
           echo -e "\\033[1;36mgit checkout gh-pages\\033[0;02m"
           git checkout gh-pages
 
-          echo -e "\\033[1;36mrm index* main* polyfills* runtime* styles*\\033[0;02m"
-          rm -f index* main* polyfills* runtime* styles*
-
-          echo -e "\\033[1;36mcp dist/index* .\\033[0;02m"
-          cp dist/index* .
-
-          echo -e "\\033[1;36mcp dist/main* .\\033[0;02m"
-          cp dist/main* .
-
-          echo -e "\\033[1;36mcp dist/polyfills* .\\033[0;02m"
-          cp dist/polyfills* .
-
-          echo -e "\\033[1;36mcp dist/runtime* .\\033[0;02m"
-          cp dist/runtime* .
-
-          echo -e "\\033[1;36mcp dist/styles* .\\033[0;02m"
-          cp dist/styles* .
-
-          echo -e "\\033[1;36mcp dist/favicon* .\\033[0;02m"
-          cp dist/favicon* .
+          echo -e "\\033[1;36mcp dist/* .\\033[0;02m"
+          cp dist/* .
 
           echo -e "\\033[1;36msed -i 's:src=":src="ahenteti-todos/:g' index.html\\033[0;02m"
           sed -i 's:src=":src="ahenteti-todos/:g' index.html
