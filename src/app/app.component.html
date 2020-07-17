@@ -1,8 +1,6 @@
 <h1>Todo list</h1>
+<p-toast></p-toast>
 <form (ngSubmit)="addTodo()" #form="ngForm">
-  <ul>
-    <li *ngFor="let error of errors">{{ error }}</li>
-  </ul>
   <input name="todoToAdd" [(ngModel)]="todoToAdd" />
   <button type="submit">add</button>
 </form>
