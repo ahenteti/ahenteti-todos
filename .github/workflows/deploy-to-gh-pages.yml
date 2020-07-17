@@ -36,8 +36,8 @@ jobs:
           echo -e "\\033[1;36mgit config user.email ahmad.henteti@gmail.com\\033[0;02m"
           git config user.email ahmad.henteti@gmail.com
 
-          echo -e "\\033[1;36mgit commit -am commit before checkout\\033[0;02m"
-          git commit -am "commit before checkout"
+          echo -e "\\033[1;36mgit reset HEAD --hard\\033[0;02m"
+          git reset HEAD --hard
 
           echo -e "\\033[1;36mgit checkout gh-pages\\033[0;02m"
           git checkout gh-pages
