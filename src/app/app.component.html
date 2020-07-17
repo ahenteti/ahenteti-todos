@@ -1,1 +1,14 @@
-<h1>hello!</h1>
+<h1>Todo list</h1>
+<form (ngSubmit)="addTodo()" #form="ngForm">
+  <ul>
+    <li *ngFor="let error of errors">{{ error }}</li>
+  </ul>
+  <input name="todoToAdd" [(ngModel)]="todoToAdd" />
+  <button type="submit">add</button>
+</form>
+<ul>
+  <li *ngFor="let todo of todos; let index = index">
+    <span>{{ todo.title }}</span>
+    <button (click)="removeTodo(index)">remove</button>
+  </li>
+</ul>
