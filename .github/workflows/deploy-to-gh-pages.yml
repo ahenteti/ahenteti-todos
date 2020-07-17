@@ -54,6 +54,9 @@ jobs:
           echo -e "\\033[1;36mcp dist/styles* .\\033[0;02m"
           cp dist/styles* .
 
+          echo -e "\\033[1;36mcp dist/favicon* .\\033[0;02m"
+          cp dist/favicon* .
+
           echo -e "\\033[1;36msed -i 's:src=":src="ahenteti-todos/:g' index.html\\033[0;02m"
           sed -i 's:src=":src="ahenteti-todos/:g' index.html
 
