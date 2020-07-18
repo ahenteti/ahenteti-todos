@@ -1,11 +1,13 @@
 <p-toast></p-toast>
 <div class="container">
   <section class="header">
-    <button (click)="incrementDate(-1)">previous</button>
-    <h1>
-      <span class="fw-300">{{ date | date: 'd MMMM yyyy' }}</span>
-    </h1>
-    <button (click)="incrementDate()">next</button>
+    <span (click)="incrementDate(-1)">
+      <span class="iconify increment-date-button" data-icon="eva:arrow-ios-back-fill" data-inline="false"></span>
+    </span>
+    <span class="date">{{ date | date: 'd MMMM yyyy' }}</span>
+    <span (click)="incrementDate()">
+      <span class="iconify increment-date-button" data-icon="eva:arrow-ios-forward-fill" data-inline="false"></span>
+    </span>
   </section>
   <section class="add-todo-form">
     <form (ngSubmit)="addTodo()" #form="ngForm">
