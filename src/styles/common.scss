@@ -1,4 +1,5 @@
 :root {
+  --transition: all 200ms ease-in;
   @media screen and (max-width: 480px) {
     --font-size: 45%;
   }
@@ -17,6 +18,8 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
+  min-height: 100%;
+  background-color: var(--body-background-color);
 }
 
 *,
@@ -25,4 +28,9 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  line-height: 1;
+  font-weight: 400;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
 }

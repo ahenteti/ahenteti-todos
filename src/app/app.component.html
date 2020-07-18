@@ -1,12 +1,23 @@
 <p-toast></p-toast>
-<h1>Todo list</h1>
-<form (ngSubmit)="addTodo()" #form="ngForm">
-  <input name="todoToAdd" [(ngModel)]="todoToAdd" />
-  <button type="submit">add</button>
-</form>
-<ul>
-  <li *ngFor="let todo of todos; let index = index">
-    <span>{{ todo.title }}</span>
-    <button (click)="removeTodo(index)">remove</button>
-  </li>
-</ul>
+<div class="container">
+  <section class="header">
+    <h1>Todo list</h1>
+  </section>
+  <section class="add-todo-form">
+    <form (ngSubmit)="addTodo()" #form="ngForm">
+      <input name="todoToAdd" [(ngModel)]="todoToAdd" placeholder="Type your task and press enter..." />
+    </form>
+  </section>
+  <section class="todo-list">
+    <ul>
+      <li (click)="toggleTodoStatusChange(todo)" [ngClass]="{ done: todo.done }" class="todo" *ngFor="let todo of todos; let index = index">
+        <p-checkbox (onChange)="toggleTodoStatusChange(todo)" class="todo-done" [(ngModel)]="todo.done" [binary]="true"></p-checkbox>
+        <span class="todo-title">{{ todo.title }}</span>
+        <span class="todo-time">{{ todo.createdAt | date: 'HH:mm a' }}</span>
+      </li>
+    </ul>
+    <p class="design-inspiration">
+      Design inspired from <a target="blank" href="https://dribbble.com/shots/2400033-ToDo-List-Day-042-dailui">Ennio Dybeli</a>
+    </p>
+  </section>
+</div>

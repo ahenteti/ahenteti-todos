@@ -1,0 +1,22 @@
+:root {
+  // palette
+  --body-background-color: #5a5ee7;
+  --border-color: #eef3f8;
+  --primary-color: #f57173;
+  --primary-color-box-shadow: #f57173a0;
+  --secondary-color: #5a5ee7;
+  --gray-color-1: #8f8da5;
+  --gray-color-2: #a8a9ca;
+  --gray-color-3: #d2d3e3;
+  --gray-color-4: #fdfcff;
+  --gray-color-5: #ffffff;
+
+  --inspiration-text-color: var(--gray-color-2);
+  --inspiration-link-color: var(--primary-color);
+  --app-container-background-color: var(--gray-color-4);
+  --add-todo-form-color: var(--gray-color-1);
+  --add-todo-form-background-color: var(--gray-color-5);
+  --todo-title-color: var(--gray-color-1);
+  --todo-done-title-color: var(--gray-color-2);
+  --todo-time-color: var(--gray-color-3);
+}

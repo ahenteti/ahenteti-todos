@@ -5,10 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { AppComponent } from './app.component';
+import { CheckboxModule } from 'primeng/checkbox';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, FormsModule, ToastModule],
+  imports: [BrowserModule, BrowserAnimationsModule, FormsModule, CheckboxModule, ToastModule],
   providers: [MessageService],
   bootstrap: [AppComponent],
 })
