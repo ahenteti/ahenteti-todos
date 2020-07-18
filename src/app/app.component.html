@@ -1,7 +1,11 @@
 <p-toast></p-toast>
 <div class="container">
   <section class="header">
-    <h1>Todo list</h1>
+    <button (click)="incrementDate(-1)">previous</button>
+    <h1>
+      <span class="fw-300">{{ date | date: 'd MMMM yyyy' }}</span>
+    </h1>
+    <button (click)="incrementDate()">next</button>
   </section>
   <section class="add-todo-form">
     <form (ngSubmit)="addTodo()" #form="ngForm">

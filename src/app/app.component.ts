@@ -17,8 +17,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.date = new Date();
-    this.date.setHours(0, 0, 0, 0);
-    this.todos = this.storageService.loadTodos(this.date);
+    this.todos = this.loadTodos();
   }
 
   public addTodo() {
@@ -34,6 +33,11 @@ export class AppComponent implements OnInit {
     this.saveTodos();
   }
 
+  public incrementDate(delta = 1) {
+    this.date = new Date(this.date.getFullYear(), this.date.getMonth(), this.date.getDate() + delta);
+    this.todos = this.loadTodos();
+  }
+
   private saveTodos() {
     this.storageService.saveTodos(this.date, this.todos);
   }
@@ -45,5 +49,9 @@ export class AppComponent implements OnInit {
       isValid = false;
     }
     return isValid;
+  }
+
+  private loadTodos(): Todo[] {
+    return this.storageService.loadTodos(this.date);
   }
 }
