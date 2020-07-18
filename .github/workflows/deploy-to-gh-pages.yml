@@ -46,7 +46,9 @@ jobs:
           cp dist/* .
 
           echo -e "\\033[1;36msed -i 's:src=":src="ahenteti-todos/:g' index.html\\033[0;02m"
-          sed -i 's:src=":src="ahenteti-todos/:g' index.html
+          sed -i 's:src="runtime:src="ahenteti-todos/runtime:g' index.html
+          sed -i 's:src="polyfills:src="ahenteti-todos/polyfills:g' index.html
+          sed -i 's:src="main:src="ahenteti-todos/main:g' index.html
 
           echo -e "\\033[1;36msed -i 's:href="favicon:href="ahenteti-todos/favicon:g' index.html\\033[0;02m"
           sed -i 's:href="favicon:href="ahenteti-todos/favicon:g' index.html

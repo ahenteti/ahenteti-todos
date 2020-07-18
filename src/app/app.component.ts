@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Todo } from './todo.model';
+import { Todo, NullTodo } from './todo.model';
 import { ToastService } from './toast.service';
 import { StorageService } from './storage.service';
 
@@ -12,6 +12,8 @@ export class AppComponent implements OnInit {
   public date: Date;
   public todos: Todo[];
   public todoToAdd: string;
+  public displayTodoEditDialog = false;
+  public selectedTodo = new NullTodo();
 
   constructor(private toastService: ToastService, private storageService: StorageService) {}
 
@@ -42,6 +44,11 @@ export class AppComponent implements OnInit {
   public deleteTodo(event, index) {
     this.todos.splice(index, 1);
     this.saveTodos();
+  }
+
+  public editTodo(todo: Todo) {
+    this.displayTodoEditDialog = true;
+    this.selectedTodo = todo;
   }
 
   private saveTodos() {

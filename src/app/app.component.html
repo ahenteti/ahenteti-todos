@@ -24,7 +24,7 @@
           <span title="delete" (click)="deleteTodo($event, index)">
             <span class="iconify todo-action todo-delete-action" data-icon="iwwa:delete" data-inline="false"></span>
           </span>
-          <span title="edit">
+          <span title="edit" (click)="editTodo(todo)">
             <span class="iconify todo-action" data-icon="eva:edit-2-fill" data-inline="false"></span>
           </span>
         </span>
@@ -35,3 +35,7 @@
     </p>
   </section>
 </div>
+
+<p-dialog modal="true" styleClass="edit-todo-dialog" [header]="selectedTodo.title" [(visible)]="displayTodoEditDialog">
+  Content
+</p-dialog>

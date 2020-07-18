@@ -1,6 +1,7 @@
 .container {
   display: block;
-  max-width: 45rem;
+  width: 90%;
+  max-width: 55rem;
   margin: 3rem auto;
   box-shadow: 0 1rem 150px rgba(0, 0, 0, 0.15);
   border-radius: 0.5rem;
@@ -143,4 +144,8 @@
 
 .design-inspiration a {
   color: var(--inspiration-link-color);
+}
+
+::ng-deep .edit-todo-dialog {
+  width: 60rem;
 }
