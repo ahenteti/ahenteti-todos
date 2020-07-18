@@ -20,6 +20,14 @@
         <p-checkbox (onChange)="toggleTodoStatusChange(todo)" class="todo-done" [(ngModel)]="todo.done" [binary]="true"></p-checkbox>
         <span class="todo-title">{{ todo.title }}</span>
         <span class="todo-time">{{ todo.createdAt | date: 'HH:mm a' }}</span>
+        <span class="todo-actions">
+          <span title="delete" (click)="deleteTodo($event, index)">
+            <span class="iconify todo-action todo-delete-action" data-icon="iwwa:delete" data-inline="false"></span>
+          </span>
+          <span title="edit">
+            <span class="iconify todo-action" data-icon="eva:edit-2-fill" data-inline="false"></span>
+          </span>
+        </span>
       </li>
     </ul>
     <p class="design-inspiration">

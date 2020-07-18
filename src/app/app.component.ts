@@ -29,6 +29,7 @@ export class AppComponent implements OnInit {
   }
 
   public toggleTodoStatusChange(todo: Todo) {
+    console.log('enter toggleTodoStatusChange method');
     todo.done = !todo.done;
     this.saveTodos();
   }
@@ -36,6 +37,11 @@ export class AppComponent implements OnInit {
   public incrementDate(delta = 1) {
     this.date = new Date(this.date.getFullYear(), this.date.getMonth(), this.date.getDate() + delta);
     this.todos = this.loadTodos();
+  }
+
+  public deleteTodo(event, index) {
+    this.todos.splice(index, 1);
+    this.saveTodos();
   }
 
   private saveTodos() {
