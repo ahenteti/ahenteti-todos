@@ -1,0 +1,16 @@
+<p-dialog modal="true" styleClass="dialog" header="Edit" [(visible)]="visible">
+  <div class="header">
+    <input class="todo-title" type="text" [(ngModel)]="todo.title" />
+    <p-checkbox class="todo-done" [(ngModel)]="todo.done" [binary]="true"></p-checkbox>
+  </div>
+  <textarea class="new-progress-detail-textarea" placeholder="describe your progress" #newProgressDetail></textarea>
+  <button (click)="addProgression(newProgressDetail.value)">add</button>
+  {{ todo.progressDetails.length }}
+  <ul>
+    <li *ngFor="let progress of todo.progressDetails">
+      {{ progress.detail }}
+    </li>
+  </ul>
+  <button (click)="cancel()">cancel</button>
+  <button (click)="save()">save</button>
+</p-dialog>

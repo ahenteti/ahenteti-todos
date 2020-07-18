@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Todo, NullTodo } from './todo.model';
-import { ToastService } from './toast.service';
-import { StorageService } from './storage.service';
+import { Todo, NullTodo } from './models/todo.model';
+import { ToastService } from './services/toast.service';
+import { StorageService } from './services/storage.service';
+import { ObjectService } from './services/object.service';
 
 @Component({
   selector: 'app-root',
@@ -13,9 +14,10 @@ export class AppComponent implements OnInit {
   public todos: Todo[];
   public todoToAdd: string;
   public displayTodoEditDialog = false;
-  public selectedTodo = new NullTodo();
+  public todoToEdit: Todo = new NullTodo();
+  private todoToEditIndex: number;
 
-  constructor(private toastService: ToastService, private storageService: StorageService) {}
+  constructor(private toastService: ToastService, private storageService: StorageService, private objectService: ObjectService) {}
 
   ngOnInit(): void {
     this.date = new Date();
@@ -24,7 +26,7 @@ export class AppComponent implements OnInit {
 
   public addTodo() {
     if (this.validateAddTodo()) {
-      this.todos.unshift({ title: this.todoToAdd, createdAt: new Date(), done: false });
+      this.todos.unshift({ title: this.todoToAdd, createdAt: new Date(), done: false, progressDetails: [] });
       this.todoToAdd = '';
       this.saveTodos();
     }
@@ -42,13 +44,33 @@ export class AppComponent implements OnInit {
   }
 
   public deleteTodo(event, index) {
+    event.stopPropagation();
     this.todos.splice(index, 1);
     this.saveTodos();
   }
 
-  public editTodo(todo: Todo) {
+  public editTodo(event, todo: Todo, index: number) {
+    event.stopPropagation();
     this.displayTodoEditDialog = true;
-    this.selectedTodo = todo;
+    this.todoToEdit = this.objectService.clone(todo);
+    this.todoToEditIndex = index;
+  }
+
+  public saveEditToto() {
+    this.todos.splice(this.todoToEditIndex, 1, this.todoToEdit);
+    this.saveTodos();
+    this.hideTodoEditDialog();
+  }
+
+  public cancelEditToto() {
+    this.hideTodoEditDialog();
+  }
+
+  public addProgressDetail(detail) {
+    if (!this.todoToEdit.progressDetails) {
+      this.todoToEdit.progressDetails = [];
+    }
+    this.todoToEdit.progressDetails.unshift({ detail, createdAt: new Date() });
   }
 
   private saveTodos() {
@@ -66,5 +88,9 @@ export class AppComponent implements OnInit {
 
   private loadTodos(): Todo[] {
     return this.storageService.loadTodos(this.date);
+  }
+
+  private hideTodoEditDialog() {
+    this.displayTodoEditDialog = false;
   }
 }

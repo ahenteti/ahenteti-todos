@@ -9,11 +9,11 @@
   overflow: hidden;
 }
 
-.header {
+.container .header {
   border-bottom: 1px solid var(--border-color);
 }
 
-.header {
+.container .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -21,13 +21,13 @@
   height: 8rem;
 }
 
-.header .date {
+.container .header .date {
   font-size: 2.5rem;
   color: var(--header-text-color);
   font-weight: 300;
 }
 
-.header .increment-date-button {
+.container .header .increment-date-button {
   font-size: 4rem;
   color: var(--header-button-color);
   cursor: pointer;
@@ -106,8 +106,6 @@
   right: calc(100%);
   bottom: 0;
   background-color: var(--primary-color);
-  transition: var(--transition);
-  transition-property: right;
 }
 
 .todo .todo-actions {
@@ -144,8 +142,4 @@
 
 .design-inspiration a {
   color: var(--inspiration-link-color);
-}
-
-::ng-deep .edit-todo-dialog {
-  width: 60rem;
 }

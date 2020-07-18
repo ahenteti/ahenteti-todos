@@ -4,7 +4,7 @@
     <span (click)="incrementDate(-1)">
       <span class="iconify increment-date-button" data-icon="eva:arrow-ios-back-fill" data-inline="false"></span>
     </span>
-    <span class="date">{{ date | date: 'd MMMM yyyy' }}</span>
+    <span class="date">{{ date | date: 'MMMM d, yyyy' }}</span>
     <span (click)="incrementDate()">
       <span class="iconify increment-date-button" data-icon="eva:arrow-ios-forward-fill" data-inline="false"></span>
     </span>
@@ -24,7 +24,7 @@
           <span title="delete" (click)="deleteTodo($event, index)">
             <span class="iconify todo-action todo-delete-action" data-icon="iwwa:delete" data-inline="false"></span>
           </span>
-          <span title="edit" (click)="editTodo(todo)">
+          <span title="edit" (click)="editTodo($event, todo, index)">
             <span class="iconify todo-action" data-icon="eva:edit-2-fill" data-inline="false"></span>
           </span>
         </span>
@@ -36,6 +36,9 @@
   </section>
 </div>
 
-<p-dialog modal="true" styleClass="edit-todo-dialog" [header]="selectedTodo.title" [(visible)]="displayTodoEditDialog">
-  Content
-</p-dialog>
+<app-edit-todo-dialog
+  (save)="saveEditToto()"
+  (cancel)="cancelEditToto()"
+  [visible]="displayTodoEditDialog"
+  [todo]="todoToEdit"
+></app-edit-todo-dialog>

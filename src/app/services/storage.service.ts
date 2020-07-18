@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Todo } from './todo.model';
 import * as moment from 'moment';
+import { Todo } from '../models/todo.model';
 
 const LOCAL_STORAGE_TODOS_KEY_PREFIX = 'LOCAL_STORAGE_TODOS_KEY_';
 

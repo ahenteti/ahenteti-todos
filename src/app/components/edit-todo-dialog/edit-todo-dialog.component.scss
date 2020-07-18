@@ -1,0 +1,30 @@
+::ng-deep .dialog {
+  width: 60rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-title {
+  border: none;
+  border: 1px solid var(--dialog-background-color);
+  padding: 1rem;
+  border-radius: 0.3rem;
+  transition: var(--transition);
+  transition-property: color, border-color, border-style;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--todo-title-color);
+
+  &:hover,
+  &:focus {
+    border: 1px dashed var(--input-dashed-border-color);
+  }
+}
+
+.new-progress-detail-textarea {
+  width: 100%;
+}
