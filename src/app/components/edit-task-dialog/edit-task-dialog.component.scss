@@ -8,7 +8,7 @@
   margin-bottom: 2rem;
 }
 
-.todo-title {
+.task-title {
   border: none;
   border-bottom: 1px solid var(--dialog-background-color);
   padding: 1rem 0;
@@ -17,7 +17,7 @@
   transition-property: color, border-color, border-style;
   font-size: 2.5rem;
   font-weight: 500;
-  color: var(--todo-title-color);
+  color: var(--task-title-color);
   margin-left: 1.5rem;
 
   &:hover,

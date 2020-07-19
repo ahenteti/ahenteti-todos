@@ -9,36 +9,36 @@
       <span class="iconify increment-date-button" data-icon="eva:arrow-ios-forward-fill" data-inline="false"></span>
     </span>
   </section>
-  <section class="add-todo-form">
-    <form (ngSubmit)="addTodo()" #form="ngForm">
-      <input name="todoToAdd" [(ngModel)]="todoToAdd" placeholder="Type your task and press enter..." />
+  <section class="add-task-form">
+    <form (ngSubmit)="addTask()" #form="ngForm">
+      <input name="taskToAdd" [(ngModel)]="taskToAdd" placeholder="Type your task and press enter..." />
     </form>
   </section>
-  <section class="todo-list">
+  <section class="task-list">
     <ul>
-      <li (click)="toggleTaskStatus()" [ngClass]="{ done: todo.done }" class="todo" *ngFor="let todo of todos; let index = index">
-        <app-task-status class="todo-status" [(done)]="todo.done"></app-task-status>
-        <span class="todo-title">{{ todo.title }}</span>
-        <span class="todo-time">{{ todo.createdAt | date: 'HH:mm a' }}</span>
-        <span class="todo-actions">
-          <span title="delete" (click)="deleteTodo($event, index)">
-            <span class="iconify todo-action todo-delete-action" data-icon="iwwa:delete" data-inline="false"></span>
+      <li (click)="toggleTaskStatus()" [ngClass]="{ done: task.done }" class="task" *ngFor="let task of tasks; let index = index">
+        <app-task-status class="task-status" [(done)]="task.done"></app-task-status>
+        <span class="task-title">{{ task.title }}</span>
+        <span class="task-time">{{ task.createdAt | date: 'HH:mm a' }}</span>
+        <span class="task-actions">
+          <span title="delete" (click)="deleteTask($event, index)">
+            <span class="iconify task-action task-delete-action" data-icon="iwwa:delete" data-inline="false"></span>
           </span>
-          <span title="edit" (click)="editTodo($event, todo, index)">
-            <span class="iconify todo-action" data-icon="eva:edit-2-fill" data-inline="false"></span>
+          <span title="edit" (click)="editTask($event, task, index)">
+            <span class="iconify task-action" data-icon="eva:edit-2-fill" data-inline="false"></span>
           </span>
         </span>
       </li>
     </ul>
     <p class="design-inspiration">
-      Design inspired from <a target="blank" href="https://dribbble.com/shots/2400033-ToDo-List-Day-042-dailui">Ennio Dybeli</a>
+      Design inspired from <a target="blank" href="https://dribbble.com/shots/2400033-task-List-Day-042-dailui">Ennio Dybeli</a>
     </p>
   </section>
 </div>
 
-<app-edit-todo-dialog
-  (save)="saveEditToto()"
-  (cancel)="cancelEditToto()"
-  [visible]="displayTodoEditDialog"
-  [todo]="todoToEdit"
-></app-edit-todo-dialog>
+<app-edit-task-dialog
+  (save)="saveEditTask()"
+  (cancel)="cancelEditTask()"
+  [visible]="displayTaskEditDialog"
+  [task]="taskToEdit"
+></app-edit-task-dialog>

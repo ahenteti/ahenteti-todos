@@ -20,7 +20,6 @@ export class TaskStatusComponent {
   }
 
   public toggleStatus() {
-    console.log(this.done);
     this.done = !this.done;
   }
 }

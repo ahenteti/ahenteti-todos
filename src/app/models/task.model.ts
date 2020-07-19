@@ -1,16 +1,16 @@
-export interface Todo {
+export interface Task {
   title: string;
   createdAt: Date;
   done: boolean;
-  progressDetails: TodoProgressDetail[];
+  progressDetails: TaskProgressDetail[];
 }
 
-export interface TodoProgressDetail {
+export interface TaskProgressDetail {
   detail: string;
   createdAt: Date;
 }
 
-export class NullTodo implements Todo {
+export class NullTask implements Task {
   title = '';
   createdAt = new Date();
   done = false;

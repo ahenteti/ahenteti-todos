@@ -8,11 +8,11 @@ import { MessageService } from 'primeng/api';
 import { CheckboxModule } from 'primeng/checkbox';
 import { DialogModule } from 'primeng/dialog';
 import { TooltipModule } from 'primeng/tooltip';
-import { EditTodoDialogComponent } from './components/edit-todo-dialog/edit-todo-dialog.component';
 import { TaskStatusComponent } from './components/task-status/task-status.component';
+import { EditTaskDialogComponent } from './components/edit-task-dialog/edit-task-dialog.component';
 
 @NgModule({
-  declarations: [AppComponent, TaskStatusComponent, EditTodoDialogComponent],
+  declarations: [AppComponent, TaskStatusComponent, EditTaskDialogComponent],
   imports: [BrowserModule, BrowserAnimationsModule, FormsModule, CheckboxModule, ToastModule, DialogModule, TooltipModule],
   providers: [MessageService],
   bootstrap: [AppComponent],

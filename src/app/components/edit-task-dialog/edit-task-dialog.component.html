@@ -1,13 +1,13 @@
 <p-dialog modal="true" styleClass="dialog" header="Edit" [(visible)]="visible">
   <div class="header">
-    <app-task-status class="todo-status" [(done)]="todo.done"></app-task-status>
-    <input class="todo-title" type="text" [(ngModel)]="todo.title" />
+    <app-task-status class="task-status" [(done)]="task.done"></app-task-status>
+    <input class="task-title" type="text" [(ngModel)]="task.title" />
   </div>
   <textarea class="new-progress-detail-textarea" placeholder="describe your progress" #newProgressDetail></textarea>
   <button (click)="addProgression(newProgressDetail.value)">add</button>
-  {{ todo.progressDetails.length }}
+  {{ task.progressDetails.length }}
   <ul>
-    <li *ngFor="let progress of todo.progressDetails">
+    <li *ngFor="let progress of task.progressDetails">
       {{ progress.detail }}
     </li>
   </ul>
