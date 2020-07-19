@@ -1,6 +1,6 @@
 :root {
   // palette
-  --body-background-color: #5a5ee7;
+  --body-background-color: #fafafa;
   --border-color-light: #eef3f8;
   --border-color-dark: #a8a9ca;
   --primary-color: #f57173;
@@ -33,4 +33,5 @@
   --done-icon-color: var(--primary-color);
   --input-border-color: var(--border-color-dark);
   --input-border-color-on-hover-and-focus-states: var(--primary-color-light);
+  --timeline-border-color: var(--gray-color-3);
 }

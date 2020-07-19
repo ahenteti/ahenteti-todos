@@ -17,4 +17,11 @@ export class CalendarDate extends Date {
     res.setFullYear(this.getFullYear(), this.getMonth(), this.getDate() + delta);
     return res;
   }
+
+  public static from(date: Date): CalendarDate {
+    const res = new CalendarDate();
+    const internalDate = new Date(date); // hack to fix "Javascript: getFullyear() is not a function" error! really I didn't understand why I obtained this error when accessing the getFullYear() method directly from date variable. if you know the reason behind this, please let me know :)
+    res.setFullYear(internalDate.getFullYear(), internalDate.getMonth(), internalDate.getDate());
+    return res;
+  }
 }

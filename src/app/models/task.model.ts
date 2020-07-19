@@ -5,10 +5,10 @@ export interface Task {
   createdAt: Date;
   date: CalendarDate;
   done: boolean;
-  progressDetails: TaskProgressDetail[];
+  progressList: TaskProgress[];
 }
 
-export interface TaskProgressDetail {
+export interface TaskProgress {
   detail: string;
   createdAt: Date;
 }
@@ -18,5 +18,7 @@ export class NullTask implements Task {
   createdAt = new Date();
   date = new CalendarDate();
   done = false;
-  progressDetails = [];
+  progressList = [];
 }
+
+export class TaskProgressListByDateMap extends Map<string, TaskProgress[]> {}

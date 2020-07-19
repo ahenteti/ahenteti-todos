@@ -11,9 +11,10 @@ import { TooltipModule } from 'primeng/tooltip';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { TaskStatusComponent } from './components/task-status/task-status.component';
 import { EditTaskDialogComponent } from './components/edit-task-dialog/edit-task-dialog.component';
+import { TaskProgressComponent } from './components/task-progress/task-progress.component';
 
 @NgModule({
-  declarations: [AppComponent, TaskStatusComponent, EditTaskDialogComponent],
+  declarations: [AppComponent, TaskStatusComponent, EditTaskDialogComponent, TaskProgressComponent],
   imports: [BrowserModule, BrowserAnimationsModule, FormsModule, CheckboxModule, ToastModule, DialogModule, TooltipModule, InputTextareaModule],
   providers: [MessageService],
   bootstrap: [AppComponent],

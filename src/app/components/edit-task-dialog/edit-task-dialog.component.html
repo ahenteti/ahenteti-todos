@@ -9,11 +9,7 @@
       <span class="iconify" data-icon="carbon:add" data-inline="false"></span>
     </button>
   </div>
-  <!-- <ul>
-    <li *ngFor="let progress of task.progressDetails">
-      {{ progress.detail }}
-    </li>
-  </ul> -->
+  <app-task-progress [task-progress-list]="task.progressList"></app-task-progress>
   <div class="buttons">
     <button class="outline" (click)="cancel()">cancel</button>
     <button (click)="save()">save</button>

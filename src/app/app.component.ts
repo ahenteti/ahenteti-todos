@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
 
   public addTask() {
     if (this.validateAddTask()) {
-      this.tasks.unshift({ title: this.taskToAdd, createdAt: new Date(), date: new CalendarDate(), done: false, progressDetails: [] });
+      this.tasks.unshift({ title: this.taskToAdd, createdAt: new Date(), date: new CalendarDate(), done: false, progressList: [] });
       this.taskToAdd = '';
       this.saveTasks();
     }
@@ -62,10 +62,10 @@ export class AppComponent implements OnInit {
   }
 
   public addProgressDetail(detail) {
-    if (!this.taskToEdit.progressDetails) {
-      this.taskToEdit.progressDetails = [];
+    if (!this.taskToEdit.progressList) {
+      this.taskToEdit.progressList = [];
     }
-    this.taskToEdit.progressDetails.unshift({ detail, createdAt: new Date() });
+    this.taskToEdit.progressList.unshift({ detail, createdAt: new Date() });
   }
 
   private saveTasks() {
