@@ -3,14 +3,19 @@
     <app-task-status class="task-status" [(done)]="task.done"></app-task-status>
     <input class="task-title" type="text" [(ngModel)]="task.title" />
   </div>
-  <textarea class="new-progress-detail-textarea" placeholder="describe your progress" #newProgressDetail></textarea>
-  <button (click)="addProgression(newProgressDetail.value)">add</button>
-  {{ task.progressDetails.length }}
-  <ul>
+  <div class="new-progress-detail-box">
+    <textarea class="new-progress-detail-textarea" placeholder="describe your progress" #newProgressDetail></textarea>
+    <button class="new-progress-detail-add-button" (click)="addProgression(newProgressDetail.value)">
+      <span class="iconify" data-icon="carbon:add" data-inline="false"></span>
+    </button>
+  </div>
+  <!-- <ul>
     <li *ngFor="let progress of task.progressDetails">
       {{ progress.detail }}
     </li>
-  </ul>
-  <button (click)="cancel()">cancel</button>
-  <button (click)="save()">save</button>
+  </ul> -->
+  <div class="buttons">
+    <button class="outline" (click)="cancel()">cancel</button>
+    <button (click)="save()">save</button>
+  </div>
 </p-dialog>

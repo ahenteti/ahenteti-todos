@@ -60,10 +60,6 @@ export class AppComponent implements OnInit {
     this.hideTaskEditDialog();
   }
 
-  public cancelEditTask() {
-    this.hideTaskEditDialog();
-  }
-
   public addProgressDetail(detail) {
     if (!this.taskToEdit.progressDetails) {
       this.taskToEdit.progressDetails = [];

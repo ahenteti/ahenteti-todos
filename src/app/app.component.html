@@ -36,9 +36,4 @@
   </section>
 </div>
 
-<app-edit-task-dialog
-  (save)="saveEditTask()"
-  (cancel)="cancelEditTask()"
-  [(visible)]="displayTaskEditDialog"
-  [task]="taskToEdit"
-></app-edit-task-dialog>
+<app-edit-task-dialog (save)="saveEditTask()" [(visible)]="displayTaskEditDialog" [task]="taskToEdit"></app-edit-task-dialog>

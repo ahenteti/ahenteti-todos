@@ -10,7 +10,7 @@
 }
 
 .container .header {
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color-light);
 }
 
 .container .header {
@@ -50,7 +50,7 @@
   border: none;
   outline: none;
   padding: 0 2rem 0 7rem;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color-light);
   width: 100%;
   color: var(--add-task-form-color);
   height: 7rem;

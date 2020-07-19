@@ -9,7 +9,6 @@ import { Task } from '../../models/task.model';
 export class EditTaskDialogComponent {
   @Input() public task: Task;
   @Output('save') public saveOutput = new EventEmitter<void>();
-  @Output('cancel') public cancelOutput = new EventEmitter<void>();
   private visibleValue: boolean;
   @Output() visibleChange = new EventEmitter<boolean>();
 
@@ -28,7 +27,7 @@ export class EditTaskDialogComponent {
   }
 
   public cancel() {
-    this.cancelOutput.emit();
+    this.visible = false;
   }
 
   public save() {

@@ -19,6 +19,7 @@
   font-weight: 500;
   color: var(--task-title-color);
   margin-left: 1.5rem;
+  width: 100%;
 
   &:hover,
   &:focus {
@@ -26,6 +27,28 @@
   }
 }
 
-.new-progress-detail-textarea {
-  width: 100%;
+.new-progress-detail-box {
+  display: flex;
+  align-items: flex-start;
+}
+
+.new-progress-detail-add-button {
+  flex: 5rem 0 0;
+  margin-left: 1rem;
+  padding: 0;
+
+  & .iconify {
+    color: white;
+  }
+}
+
+.buttons {
+  margin: 2rem 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  & button {
+    margin-left: 1rem;
+  }
 }
