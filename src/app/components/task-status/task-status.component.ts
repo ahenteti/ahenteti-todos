@@ -19,7 +19,8 @@ export class TaskStatusComponent {
     this.doneChange.emit(value);
   }
 
-  public toggleStatus() {
+  public toggleStatus(event) {
+    event.stopPropagation();
     this.done = !this.done;
   }
 }

@@ -26,13 +26,13 @@ export class AppComponent implements OnInit {
 
   public addTask() {
     if (this.validateAddTask()) {
-      this.tasks.unshift({ title: this.taskToAdd, createdAt: new TaskDate(), done: false, progressDetails: [] });
+      this.tasks.unshift({ title: this.taskToAdd, createdAt: new Date(), date: new TaskDate(), done: false, progressDetails: [] });
       this.taskToAdd = '';
       this.saveTasks();
     }
   }
 
-  public toggleTaskStatus() {
+  public saveTaskStatusChange() {
     this.saveTasks();
   }
 

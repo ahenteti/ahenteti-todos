@@ -2,7 +2,8 @@ import * as moment from 'moment';
 
 export interface Task {
   title: string;
-  createdAt: TaskDate;
+  createdAt: Date;
+  date: TaskDate;
   done: boolean;
   progressDetails: TaskProgressDetail[];
 }
@@ -14,7 +15,8 @@ export interface TaskProgressDetail {
 
 export class NullTask implements Task {
   title = '';
-  createdAt = new TaskDate();
+  createdAt = new Date();
+  date = new TaskDate();
   done = false;
   progressDetails = [];
 }

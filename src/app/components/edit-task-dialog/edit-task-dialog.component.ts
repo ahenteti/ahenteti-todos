@@ -7,12 +7,21 @@ import { Task } from '../../models/task.model';
   styleUrls: ['edit-task-dialog.component.scss'],
 })
 export class EditTaskDialogComponent {
-  @Input() public visible: boolean;
   @Input() public task: Task;
   @Output('save') public saveOutput = new EventEmitter<void>();
   @Output('cancel') public cancelOutput = new EventEmitter<void>();
+  private visibleValue: boolean;
+  @Output() visibleChange = new EventEmitter<boolean>();
 
-  constructor() {}
+  @Input()
+  get visible() {
+    return this.visibleValue;
+  }
+
+  set visible(value) {
+    this.visibleValue = value;
+    this.visibleChange.emit(value);
+  }
 
   public addProgression(progression) {
     this.task.progressDetails.push({ detail: progression, createdAt: new Date() });
