@@ -32,9 +32,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  public toggleTodoStatusChange(todo: Todo) {
-    console.log('enter toggleTodoStatusChange method');
-    todo.done = !todo.done;
+  public toggleTaskStatus() {
     this.saveTodos();
   }
 
