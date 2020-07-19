@@ -8,9 +8,10 @@ import { MessageService } from 'primeng/api';
 import { CheckboxModule } from 'primeng/checkbox';
 import { DialogModule } from 'primeng/dialog';
 import { EditTodoDialogComponent } from './components/edit-todo-dialog/edit-todo-dialog.component';
+import { TaskStatusComponent } from './components/task-status/task-status.component';
 
 @NgModule({
-  declarations: [AppComponent, EditTodoDialogComponent],
+  declarations: [AppComponent, TaskStatusComponent, EditTodoDialogComponent],
   imports: [BrowserModule, BrowserAnimationsModule, FormsModule, CheckboxModule, ToastModule, DialogModule],
   providers: [MessageService],
   bootstrap: [AppComponent],

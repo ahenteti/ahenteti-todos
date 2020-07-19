@@ -17,7 +17,7 @@
   <section class="todo-list">
     <ul>
       <li (click)="toggleTodoStatusChange(todo)" [ngClass]="{ done: todo.done }" class="todo" *ngFor="let todo of todos; let index = index">
-        <p-checkbox (onChange)="toggleTodoStatusChange(todo)" class="todo-done" [(ngModel)]="todo.done" [binary]="true"></p-checkbox>
+        <app-task-status class="todo-status" [(done)]="todo.done"></app-task-status>
         <span class="todo-title">{{ todo.title }}</span>
         <span class="todo-time">{{ todo.createdAt | date: 'HH:mm a' }}</span>
         <span class="todo-actions">
