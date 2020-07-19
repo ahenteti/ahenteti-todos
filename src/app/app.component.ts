@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Task, NullTask } from './models/task.model';
+import { Task, NullTask, TaskDate } from './models/task.model';
 import { ToastService } from './services/toast.service';
 import { StorageService } from './services/storage.service';
 import { ObjectService } from './services/object.service';
@@ -10,7 +10,7 @@ import { ObjectService } from './services/object.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  public date: Date;
+  public date: TaskDate;
   public tasks: Task[];
   public taskToAdd: string;
   public displayTaskEditDialog = false;
@@ -20,13 +20,13 @@ export class AppComponent implements OnInit {
   constructor(private toastService: ToastService, private storageService: StorageService, private objectService: ObjectService) {}
 
   ngOnInit(): void {
-    this.date = new Date();
+    this.date = new TaskDate();
     this.tasks = this.loadTasks();
   }
 
   public addTask() {
     if (this.validateAddTask()) {
-      this.tasks.unshift({ title: this.taskToAdd, createdAt: new Date(), done: false, progressDetails: [] });
+      this.tasks.unshift({ title: this.taskToAdd, createdAt: new TaskDate(), done: false, progressDetails: [] });
       this.taskToAdd = '';
       this.saveTasks();
     }
@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
   }
 
   public incrementDate(delta = 1) {
-    this.date = new Date(this.date.getFullYear(), this.date.getMonth(), this.date.getDate() + delta);
+    this.date = this.date.increase(delta);
     this.tasks = this.loadTasks();
   }
 
