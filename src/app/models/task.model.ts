@@ -1,9 +1,9 @@
-import * as moment from 'moment';
+import { CalendarDate } from './calendar-date.model';
 
 export interface Task {
   title: string;
   createdAt: Date;
-  date: TaskDate;
+  date: CalendarDate;
   done: boolean;
   progressDetails: TaskProgressDetail[];
 }
@@ -16,24 +16,7 @@ export interface TaskProgressDetail {
 export class NullTask implements Task {
   title = '';
   createdAt = new Date();
-  date = new TaskDate();
+  date = new CalendarDate();
   done = false;
   progressDetails = [];
-}
-
-export class TaskDate extends Date {
-  constructor() {
-    super();
-    this.setHours(0, 0, 0, 0);
-  }
-
-  public toLocalStorageFormat(): string {
-    return moment(this).format('YYYY_MM_DD');
-  }
-
-  public increase(delta: number): TaskDate {
-    const res = new TaskDate();
-    res.setFullYear(this.getFullYear(), this.getMonth(), this.getDate() + delta);
-    return res;
-  }
 }

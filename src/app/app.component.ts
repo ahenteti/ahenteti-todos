@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Task, NullTask, TaskDate } from './models/task.model';
+import { Task, NullTask } from './models/task.model';
 import { ToastService } from './services/toast.service';
 import { StorageService } from './services/storage.service';
 import { ObjectService } from './services/object.service';
+import { CalendarDate } from './models/calendar-date.model';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { ObjectService } from './services/object.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  public date: TaskDate;
+  public date: CalendarDate;
   public tasks: Task[];
   public taskToAdd: string;
   public displayTaskEditDialog = false;
@@ -20,13 +21,13 @@ export class AppComponent implements OnInit {
   constructor(private toastService: ToastService, private storageService: StorageService, private objectService: ObjectService) {}
 
   ngOnInit(): void {
-    this.date = new TaskDate();
+    this.date = new CalendarDate();
     this.tasks = this.loadTasks();
   }
 
   public addTask() {
     if (this.validateAddTask()) {
-      this.tasks.unshift({ title: this.taskToAdd, createdAt: new Date(), date: new TaskDate(), done: false, progressDetails: [] });
+      this.tasks.unshift({ title: this.taskToAdd, createdAt: new Date(), date: new CalendarDate(), done: false, progressDetails: [] });
       this.taskToAdd = '';
       this.saveTasks();
     }
