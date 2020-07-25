@@ -6,8 +6,7 @@
   position: relative;
   padding-left: 2rem;
   margin-left: 1rem;
-  margin-bottom: 2rem;
-  border-left: 2px solid var(--timeline-border-color);
+  margin-bottom: 1rem;
 
   &:last-child {
     margin-bottom: 0;
@@ -17,23 +16,22 @@
 .list-container::before {
   content: '';
   position: absolute;
-  width: 2px;
-  height: 2rem;
-  background-color: var(--timeline-border-color);
+  top: 1rem;
   left: -2px;
-  top: 100%;
+  bottom: -2rem;
+  width: 2px;
+  background-color: var(--timeline-border-color);
 }
 
 .list-container:last-child::before {
-  display: none;
+  bottom: 0;
 }
 
 .title {
   font-size: 2rem;
-  font-weight: 300;
+  font-weight: 400;
   position: relative;
-  margin-bottom: 1rem;
-  color: var(--secondary-color);
+  color: var(--text-color);
 }
 
 .title::before {
@@ -49,15 +47,30 @@
 }
 
 .item {
+  position: relative;
   font-size: 1.4rem;
-  padding: 1rem 0;
+  padding: 1rem;
+  color: var(--text-color-light);
+  white-space: pre-wrap;
 
-  &:first-child {
-    padding-top: 0;
+  & .time {
+    font-weight: bold;
+    padding-right: 1rem;
   }
-}
 
-.item .time {
-  font-weight: bold;
-  padding-right: 1rem;
+  & .delete-progress {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 99;
+    display: none;
+  }
+
+  &:hover {
+    background-color: var(--task-progress-item-background-color);
+
+    & .delete-progress {
+      display: inline;
+    }
+  }
 }

@@ -5,11 +5,11 @@
   </div>
   <div class="new-progress-detail-box">
     <textarea class="new-progress-detail-textarea" placeholder="describe your progress" #newProgressDetail></textarea>
-    <span class="new-progress-detail-add-button" (click)="addProgression(newProgressDetail.value)">
+    <span class="new-progress-detail-add-button" (click)="addProgression(newProgressDetail)">
       <span class="iconify user-action" data-icon="carbon:add" data-inline="false"></span>
     </span>
   </div>
-  <app-task-progress [task-progress-list]="task.progressList"></app-task-progress>
+  <app-task-progress (delete-progress)="deleteProgress($event)" [task-progress-list]="task.progressList"></app-task-progress>
   <div class="buttons">
     <button class="outline" (click)="cancel()">cancel</button>
     <button (click)="save()">save</button>

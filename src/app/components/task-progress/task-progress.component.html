@@ -1,7 +1,9 @@
 <div class="list-container" *ngFor="let entry of map | keyvalue">
   <p class="title">{{ entry.key | date }}</p>
   <p class="item" *ngFor="let item of entry.value">
-    <span class="time">{{ item.createdAt | date: 'hh:mm a' }}</span>
     <span>{{ item.detail }}</span>
+    <span class="delete-progress" (click)="deleteProgress(item)">
+      <span class="iconify user-action" data-icon="clarity:times-line" data-inline="false"></span>
+    </span>
   </p>
 </div>

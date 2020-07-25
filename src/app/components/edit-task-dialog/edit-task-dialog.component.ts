@@ -1,5 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Task } from '../../models/task.model';
+import { Component, Input, Output, EventEmitter, ElementRef } from '@angular/core';
+import { Task, TaskProgress } from '../../models/task.model';
 
 @Component({
   selector: 'app-edit-task-dialog',
@@ -23,8 +23,14 @@ export class EditTaskDialogComponent {
   }
 
   public addProgression(progression) {
-    this.task.progressList.unshift({ detail: progression, createdAt: new Date() });
+    this.task.progressList.unshift({ detail: progression.value, createdAt: new Date() });
     this.task.progressList = [...this.task.progressList]; // hack to make angular update the ui. If you know a more elegant technique to do that, please feel free to update the code source and let me know about it :)
+    progression.value = '';
+  }
+
+  public deleteProgress(taskProgress: TaskProgress) {
+    console.log(taskProgress);
+    this.task.progressList = this.task.progressList.filter((progress) => progress !== taskProgress);
   }
 
   public titleChange(newTitle) {
