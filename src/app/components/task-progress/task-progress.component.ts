@@ -24,4 +24,8 @@ export class TaskProgressComponent implements OnChanges {
   deleteProgress(task: TaskProgress) {
     this._deleteProgress.emit(task);
   }
+
+  asIsOrder(a, b) {
+    return 0;
+  }
 }

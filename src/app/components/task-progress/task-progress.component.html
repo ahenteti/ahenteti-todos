@@ -1,4 +1,4 @@
-<div class="list-container" *ngFor="let entry of map | keyvalue">
+<div class="list-container" *ngFor="let entry of map | keyvalue: asIsOrder">
   <p class="title">{{ entry.key | date }}</p>
   <p class="item" *ngFor="let item of entry.value">
     <span>{{ item.detail }}</span>

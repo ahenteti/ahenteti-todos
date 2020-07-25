@@ -16,6 +16,10 @@ export class TaskConverter {
       }
       res.get(progressDate).push(progress);
     });
-    return res;
+    return new TaskProgressListByDateMap(
+      [...res].sort((a, b) => {
+        return new Date(a[0]) > new Date(b[0]) ? -1 : 1;
+      })
+    );
   }
 }
