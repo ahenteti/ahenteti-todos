@@ -15,7 +15,6 @@ export class TaskProgressComponent implements OnChanges {
   constructor(private taskConverter: TaskConverter) {}
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes['list']);
     const newList: TaskProgress[] = changes['list'].currentValue;
     this.map = this.taskConverter.toMap(newList);
   }

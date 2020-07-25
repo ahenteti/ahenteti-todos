@@ -1,0 +1,15 @@
+<span class="text-container" (click)="toggleMode()" [ngClass]="{ hide: inputMode() }">
+  <span class="text">{{ value }}</span>
+  <span class="text-edit-icon">
+    <span class="iconify" data-icon="eva:edit-fill" data-inline="false"></span>
+  </span>
+</span>
+<span class="input-container" [ngClass]="{ hide: outputMode() }">
+  <input class="input" (keyup.enter)="validateTextChanges(input.value)" #input type="text" [value]="value" />
+  <span class="input-buttons input-validate-button" (click)="validateTextChanges(input.value)">
+    <span class="iconify user-action" data-icon="ic:round-done" data-inline="false"></span>
+  </span>
+  <span class="input-buttons input-cancel-button" (click)="cancelTextChanges()">
+    <span class="iconify user-action" data-icon="clarity:times-line" data-inline="false"></span>
+  </span>
+</span>

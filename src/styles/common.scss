@@ -36,26 +36,39 @@ body {
 }
 
 .iconify {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: var(--icon-color);
+
+  &.user-action {
+    cursor: pointer;
+    background: var(--user-action-icon-background-color);
+    border-radius: 100rem;
+    padding: 0.5rem;
+
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
 }
 
 input,
 textarea {
-  outline: none;
   width: 100%;
   padding: 1rem;
-  border-radius: 0.3rem;
-  border: 1px solid var(--input-border-color);
   font-size: 1.5rem;
+  line-height: 2.5rem;
   font-family: inherit;
+  color: var(--text-color);
+  background-color: var(--input-background-color);
+  border: none;
+  border-bottom: 2px solid var(--input-border-color);
+  border-radius: 0.3rem;
   transition: var(--transition);
   transition-property: border-color;
-  color: var(--text-color);
 
   &:hover,
   &:focus {
-    border-color: var(--input-border-color-on-hover-and-focus-states);
+    border-color: var(--input-border-color-on-hover);
   }
 }
 
@@ -83,4 +96,8 @@ button.outline {
   &:hover {
     background-color: inherit;
   }
+}
+
+.hide {
+  display: none !important;
 }

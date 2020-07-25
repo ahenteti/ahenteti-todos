@@ -27,6 +27,10 @@ export class EditTaskDialogComponent {
     this.task.progressList = [...this.task.progressList]; // hack to make angular update the ui. If you know a more elegant technique to do that, please feel free to update the code source and let me know about it :)
   }
 
+  public titleChange(newTitle) {
+    this.task.title = newTitle;
+  }
+
   public cancel() {
     this.visible = false;
   }

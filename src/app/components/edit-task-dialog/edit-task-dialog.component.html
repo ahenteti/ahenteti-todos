@@ -1,13 +1,13 @@
 <p-dialog modal="true" styleClass="dialog" header="Edit" [(visible)]="visible">
   <div class="header">
     <app-task-status class="task-status" [(done)]="task.done"></app-task-status>
-    <input class="task-title" type="text" [(ngModel)]="task.title" />
+    <app-io-text class="task-title" [value]="task.title" (valueChange)="titleChange($event)"></app-io-text>
   </div>
   <div class="new-progress-detail-box">
     <textarea class="new-progress-detail-textarea" placeholder="describe your progress" #newProgressDetail></textarea>
-    <button class="new-progress-detail-add-button" (click)="addProgression(newProgressDetail.value)">
-      <span class="iconify" data-icon="carbon:add" data-inline="false"></span>
-    </button>
+    <span class="new-progress-detail-add-button" (click)="addProgression(newProgressDetail.value)">
+      <span class="iconify user-action" data-icon="carbon:add" data-inline="false"></span>
+    </span>
   </div>
   <app-task-progress [task-progress-list]="task.progressList"></app-task-progress>
   <div class="buttons">

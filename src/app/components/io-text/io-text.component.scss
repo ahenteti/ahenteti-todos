@@ -1,0 +1,37 @@
+:host {
+  display: inline-block;
+}
+
+.text-container {
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid transparent;
+
+  & .text {
+    padding: 0.5rem 1rem;
+  }
+
+  & .text-edit-icon {
+    visibility: hidden;
+    border-left: 2px solid #eee;
+    height: 100%;
+  }
+
+  &:hover {
+    border-color: #eee;
+    & .text-edit-icon {
+      visibility: visible;
+    }
+  }
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+
+  & .input-buttons {
+    margin-left: 0.7rem;
+  }
+}

@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
   public displayTaskEditDialog = false;
   public taskToEdit: Task = new NullTask();
   private taskToEditIndex: number;
+  public io: string = '';
 
   constructor(private toastService: ToastService, private storageService: StorageService, private objectService: ObjectService) {}
 
