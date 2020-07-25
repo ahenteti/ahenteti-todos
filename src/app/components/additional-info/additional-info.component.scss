@@ -20,3 +20,9 @@
 .container:hover .additional-info {
   display: block;
 }
+
+@media screen and (max-width: 720px) {
+  .container {
+    display: none;
+  }
+}
