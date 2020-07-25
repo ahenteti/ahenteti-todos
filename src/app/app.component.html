@@ -17,7 +17,7 @@
   </section>
   <section class="task-list">
     <ul>
-      <li (click)="editTask($event, task, index)" [ngClass]="{ done: task.done }" class="task" *ngFor="let task of tasks; let index = index">
+      <li (click)="toggleStatus(task)" [ngClass]="{ done: task.done }" class="task" *ngFor="let task of tasks; let index = index">
         <app-task-status (click)="saveTaskStatusChange()" class="task-status" [(done)]="task.done"></app-task-status>
         <span class="task-title">{{ task.title }}</span>
         <span class="task-time">{{ task.createdAt | date: 'HH:mm a' }}</span>

@@ -69,6 +69,11 @@ export class AppComponent implements OnInit {
     this.taskToEdit.progressList.unshift({ detail, createdAt: new Date() });
   }
 
+  public toggleStatus(task: Task) {
+    task.done = !task.done;
+    this.saveTasks();
+  }
+
   private saveTasks() {
     this.storageService.saveTasks(this.date, this.tasks);
   }
