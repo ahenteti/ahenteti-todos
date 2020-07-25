@@ -134,13 +134,9 @@
   right: calc(100% - 0.5rem);
 }
 
-.design-inspiration {
+.footer {
   text-align: center;
   padding: 2rem;
   font-size: 1.4rem;
-  color: var(--inspiration-text-color);
-}
-
-.design-inspiration a {
-  color: var(--inspiration-link-color);
+  color: var(--footer-color);
 }

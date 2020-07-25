@@ -13,9 +13,10 @@ import { TaskStatusComponent } from './components/task-status/task-status.compon
 import { EditTaskDialogComponent } from './components/edit-task-dialog/edit-task-dialog.component';
 import { TaskProgressComponent } from './components/task-progress/task-progress.component';
 import { IOTextComponent } from './components/io-text/io-text.component';
+import { AdditionalInfoComponent } from './components/additional-info/additional-info.component';
 
 @NgModule({
-  declarations: [AppComponent, TaskStatusComponent, EditTaskDialogComponent, TaskProgressComponent, IOTextComponent],
+  declarations: [AppComponent, TaskStatusComponent, EditTaskDialogComponent, TaskProgressComponent, IOTextComponent, AdditionalInfoComponent],
   imports: [BrowserModule, BrowserAnimationsModule, FormsModule, CheckboxModule, ToastModule, DialogModule, TooltipModule, InputTextareaModule],
   providers: [MessageService],
   bootstrap: [AppComponent],
